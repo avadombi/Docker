@@ -75,6 +75,11 @@ https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-
 
 > In VS Code, download the WSL extension (WSL). You will get a "remote explorer" icon.
 
+Note that Docker CLI is also locally installed. So, if you open your CMD (on windows), your can use the "docker" command and execute some docker commands.
+
+Example: list the currently available images: docker images.
+ 
+
 ### 1.3. More resources: WSL with VSCode, Git, Docker, ...
 
 https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
