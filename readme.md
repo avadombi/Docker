@@ -201,6 +201,30 @@ docker run -d -p 9000:80 nginx:1.25.3
 
 ![port binding](./Images/image-5.png)
 
+Now, in my web browser, if I type: localhost:9000. I will see this:
+![result of port binding: nginx](./Images/image-6.png)
+
+
+**NOTE:** Only one service by port.
+**Best practice:** Use same port for both container and host (if container port is 80, use 80)
+Thus, to expose MySQL server container (port 3306) to localhost, use 3306 also.
+
+* If you stop the container execution, the port is released for another service (if needed).
+* To start a container instead of running (thus create a new one), use:
+
+docker start container_short_id
+
+* To stop or start (choose one) multiple containers
+docker (start | stop) (container_short_id | container_random_name)
+
+* Run a container (while specifying its name)
+docker run --name web-app -d -p 9000:80 nginx:1.25.3
+
+#### 2.3.4. To list all containers (running or not)
+
+Use --all (or -a)
+docker ps -a
+
 
 
 
