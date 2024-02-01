@@ -65,6 +65,16 @@ Hypervisor enabled at Windows startup
 https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-on-windows
 
 
+> Download the installer using the download button at the top of the page, or from the release notes.
+
+> Double-click Docker Desktop Installer.exe to run the installer. By default, Docker Desktop is installed at C:\Program Files\Docker\Docker.
+
+> Follow the instruction. Once finished, restart the PC
+
+> Sign up (docker account) using gmail or github (I used github): create a username > sign in > go back to Docker Desktop > and that's all.
+
+> In VS Code, download the WSL extension (WSL). You will get a "remote explorer" icon.
+
 ### 1.3. More resources: WSL with VSCode, Git, Docker, ...
 
 https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
