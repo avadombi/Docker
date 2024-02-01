@@ -78,7 +78,7 @@ https://docs.docker.com/desktop/install/windows-install/#install-docker-desktop-
 Note that Docker CLI is also locally installed. So, if you open your CMD (on windows), your can use the "docker" command and execute some docker commands.
 
 Example: list the currently available images: docker images.
- 
+
 
 ### 1.3. More resources: WSL with VSCode, Git, Docker, ...
 
@@ -86,3 +86,20 @@ https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode
 
 
 
+# About Containers and images
+
+## 2. Difference between containers and images
+
+**A un enfant de 8 ans:**
+Imagine que tu veuilles avoir une maison spéciale pour tes jouets. Une image Docker est comme un plan pour construire cette maison. Elle contient toutes les instructions nécessaires pour construire ta maison de jouets de la même manière à chaque fois.
+
+Maintenant, un conteneur Docker est comme la maison elle-même. Une fois que tu as le plan (l'image Docker), tu peux construire autant de maisons que tu veux (les conteneurs Docker). Chaque conteneur est une copie exacte de la maison spécifiée par le plan (l'image), mais ils sont tous indépendants les uns des autres. Tu peux jouer avec différents jouets dans chaque maison sans qu'ils n'interfèrent les uns avec les autres.
+
+En résumé, l'image Docker est le plan pour construire une maison spécifique, tandis que le conteneur Docker est la maison elle-même, basée sur ce plan.
+
+**En termes techniques:**
+Une image Docker est un fichier qui contient tous les éléments nécessaires pour exécuter un logiciel, tels que les fichiers, les bibliothèques et les configurations. C'est une sorte de modèle de référence.
+
+Un conteneur Docker est une instance en cours d'exécution de cette image. Il s'agit d'un environnement isolé où le logiciel peut s'exécuter de manière indépendante, sans affecter les autres conteneurs ou le système hôte. Chaque conteneur a sa propre copie des fichiers et des bibliothèques nécessaires pour exécuter le logiciel.
+
+En résumé, une image Docker est un modèle qui contient tout ce dont un logiciel a besoin pour fonctionner, et un conteneur Docker est une instance en cours d'exécution de ce modèle, isolée et indépendante des autres conteneurs.
