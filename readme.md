@@ -158,3 +158,53 @@ docker logs container_short_id
 docker run -d nginx:1.25.3 (you can remove -d also)
 First it will pull from docker hub (by default) and then run it.
 
+### 2.3. Port binding: How to access to your container from another device, client, or whatever you want
+
+Our nginx container run on port 80. If we try to access to the nginx app in our browser (localhost:80), there will be an error (no page). To access the nginx container, make a port binding.
+
+#### 2.3.1. What is a port binding?
+
+Dans Docker, le port binding (ou liaison de port) permet de faire correspondre les ports d'un conteneur Docker avec les ports du système hôte sur lequel il s'exécute.
+
+Lorsqu'un conteneur Docker est lancé, il peut écouter des connexions réseau sur des ports spécifiques à l'intérieur du conteneur. Par défaut, ces ports ne sont pas accessibles directement depuis le système hôte.
+
+Le port binding permet de rediriger le trafic réseau entrant sur un port spécifique du système hôte vers un port spécifique du conteneur Docker. Cela permet aux applications ou aux services s'exécutant dans le conteneur d'être accessibles depuis le système hôte ou depuis d'autres machines du réseau.
+
+Par exemple, si un conteneur Docker exécute un serveur Web qui écoute les connexions sur le port 80, en utilisant le port binding, on peut lier le port 80 du conteneur au port 8080 du système hôte. Ainsi, lorsqu'on accède à l'adresse IP du système hôte sur le port 8080, le trafic est redirigé vers le serveur Web du conteneur sur le port 80.
+
+Le port binding est une fonctionnalité essentielle de Docker pour permettre la communication entre les conteneurs et le système hôte ou d'autres machines du réseau, en exposant les services des conteneurs à l'extérieur de l'environnement isolé du conteneur.
+
+
+#### 2.3.2. What is a port?
+
+Un port est une interface numérique qui permet à un ordinateur ou à un système de communiquer avec d'autres ordinateurs ou systèmes sur un réseau. On peut le voir comme une porte d'entrée ou de sortie spécifique sur un ordinateur qui est associée à un numéro.
+
+Les ports sont numérotés de 0 à 65535. Ils sont utilisés pour différencier les différents types de trafic réseau (par exemple, le trafic Web, le trafic de messagerie, etc.) et pour permettre aux ordinateurs de savoir à quel service ou application envoyer les données qui arrivent.
+
+Dans le contexte de Docker ou d'autres systèmes de conteneurs, les ports sont utilisés pour exposer et rediriger le trafic réseau vers des applications s'exécutant à l'intérieur des conteneurs. Par exemple, un serveur Web peut écouter les connexions sur le port 80, tandis qu'un serveur de messagerie peut utiliser le port 25.
+
+Lorsque vous interagissez avec une application ou un service en utilisant un réseau, vous spécifiez généralement l'adresse IP de l'ordinateur et le numéro de port associé à l'application ou au service auquel vous souhaitez accéder. Le trafic est ensuite dirigé vers le port approprié sur l'ordinateur spécifié, permettant ainsi la communication entre les différentes machines sur le réseau.
+
+En résumé, un port est une interface numérique associée à un numéro qui permet aux ordinateurs de communiquer entre eux sur un réseau en acheminant le trafic vers les bonnes applications ou services.
+
+#### 2.3.3. How to port binding?
+
+* First, stop the running container
+docker stop container_short_id  (or CTRL + C)
+(to get the short id, docker ps)
+
+* Create a new container that port binding port 80 of nginx:1.25.3 to port 9000 (for example) of our localhost machine, using --publish (or -p) => -p {HOST_PORT}:{CONTAINER_PORT}
+
+So, -p {HOST_PORT}:{CONTAINER_PORT} expose CONTAINER_PORT to our HOST_PORT
+
+docker run -d -p 9000:80 nginx:1.25.3
+
+![port binding](./Images/image-5.png)
+
+
+
+
+
+
+
+
