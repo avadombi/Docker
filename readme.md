@@ -247,8 +247,36 @@ Node.js est un environnement d'exécution côté serveur permettant d'exécuter 
 * Step 2: write a Dockerfile for node.js app
 * Step 3: build a Docker image from it
 
+![Structure of Dockerfile](./Images/image-7.png)
 
+Depending on your app, you will need to install the right base image on top of your image.
+Examples:
+* For JavaScript applications: node based image
+* For Java apps: tomcat based image
+* For Python apps: python based image (which contains the Python execution environment)
 
+To define a base image, use:
+
+FROM baseImageName:version
+
+Example: FROM node:19-alpine => It will install node.js and npm
+
+...
+
+Build our docker image:
+docker build -t imageName:tag folderWhereDockerFileIsLocated
+
+Example: docker build -t node-app:1.0 .
+.: current directory
+
+**VERY IMPORTANT**
+If you execute any docker command (starting by docker in the terminal) and get this error:
+ERROR: error during connect: this error may indicate that the docker daemon is not running: Get "http://...": open //./pipe/docker_engine: The system cannot find the file specified.
+It means that your docker desktop is not running. So run it and retry. It will work.
+
+![rember](./Images/image-8.png)
+
+For the node.js app, if we execute docker logs id => we will have the "app listening on port 3000" message.
 
 
 
