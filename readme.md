@@ -225,6 +225,31 @@ docker run --name web-app -d -p 9000:80 nginx:1.25.3
 Use --all (or -a)
 docker ps -a
 
+## 3. Registry and repository
+
+Un registre contient un ou plusieurs répertoires. Un répertoire permet de stocker et organiser les différentes versions (ou tags) d'une image.
+
+## 4. Build our own image
+
+### 4.1. In theory
+
+For that, we need to create a "definition" of how to build an image from our application. This "definition" is written in a **Dockerfile**, which is a text document that contains command to assemble an image. Docker can build an image by reading those instructions.
+
+### 4.2. In practice: example with a simple node.js application
+
+#### 4.2.1. What are node.js and node.js apps?
+
+Node.js est un environnement d'exécution côté serveur permettant d'exécuter du code JavaScript en dehors d'un navigateur web. Une application Node.js est un programme qui utilise Node.js pour créer des applications web et d'autres types de logiciels côté serveur.
+
+#### 4.2.2. Practice
+
+* Step 1: build our apps
+* Step 2: write a Dockerfile for node.js app
+* Step 3: build a Docker image from it
+
+
+
+
 
 
 
