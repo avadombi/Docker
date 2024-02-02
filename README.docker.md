@@ -76,6 +76,7 @@ Services d'orchestration de conteneurs : Si vous travaillez avec un orchestrateu
 **NOTE**
 Sometimes, a image can fail when building it and the space used is not freed. To free it, use the following command
 
+(below seem not to do what we want)
 docker builder prune --all -f  // remove build cache
 OR
 docker image prune
